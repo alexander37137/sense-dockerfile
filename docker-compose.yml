@@ -1,0 +1,10 @@
+web:
+  build: ./docker/kibana
+  links:
+    - elastic
+  ports:
+    - 5601:5601
+  environment:
+    - ELASTICSEARCH_URL=http://elastic:9200
+elastic:
+  image: elasticsearch
